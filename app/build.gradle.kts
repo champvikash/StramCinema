@@ -1,6 +1,10 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
+
+
 }
 
 android {
@@ -35,6 +39,8 @@ android {
     }
     buildFeatures {
         viewBinding = true
+        dataBinding = true
+
     }
 }
 
@@ -55,6 +61,19 @@ dependencies {
     implementation (libs.gson)
     implementation (libs.retrofit)
     implementation (libs.converter.gson)
+
+    //Dragger Hilt Dependency
+    implementation("com.google.dagger:hilt-android:2.51.1")
+    kapt("com.google.dagger:hilt-android-compiler:2.51.1")
+
+    //Paging
+    implementation ("androidx.paging:paging-runtime-ktx:3.0.0-beta03")
+
+
+
+    //Glide
+    implementation ("com.github.bumptech.glide:glide:4.11.0")
+    kapt ("com.github.bumptech.glide:compiler:4.11.0")
 
 
 }

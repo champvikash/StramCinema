@@ -1,35 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/black"
-    tools:context=".FirstFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <data>
+
+    </data>
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:context=".ui.movie.MovieFragment">
 
-        <TextView
-            android:id="@+id/popular_tv_show_text"
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/movie_toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/popular_tv_show"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
-<!--        <androidx.recyclerview.widget.RecyclerView-->
-<!--            android:id="@+id/popular_tv_show"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="0dp"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/popular_tv_show_text"-->
-<!--            tools:listitem="@layout/populat_tv_show_lay_res"/>-->
+            android:background="@color/white"
+            app:title="Movie Details"
+            app:titleTextColor="@color/white">
+
+            <SearchView
+                android:id="@+id/movie_search"
+                style="@style/Widget.AppCompat.SearchView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end" />
+
+        </com.google.android.material.appbar.MaterialToolbar>
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.core.widget.NestedScrollView>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/movie_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/movie_toolbar"
+            tools:listitem="@layout/movie_lay_res" />
+
+
+    </RelativeLayout>
+</layout>

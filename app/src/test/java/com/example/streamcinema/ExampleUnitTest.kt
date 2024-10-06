@@ -1,4 +1,4 @@
-package com.example.stramcinema
+package com.example.streamcinema
 
 import org.junit.Test
 
