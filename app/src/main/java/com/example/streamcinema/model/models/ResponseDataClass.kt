@@ -1,4 +1,4 @@
-package com.example.stramcinema
+package com.example.streamcinema.model.models
 
 data class responseDataClass(
     val page: Int,
